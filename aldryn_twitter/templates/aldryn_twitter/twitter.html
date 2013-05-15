@@ -1,0 +1,18 @@
+{% load i18n sekizai_tags staticfiles %}
+{% addtoblock "js" %}<script type="text/javascript" src="{% static "aldryn_twitter/js/jquery.tweet.js" %}"></script>{% endaddtoblock %}
+{% addtoblock "js" %}<script type="text/javascript" src="{% static "aldryn_twitter/js/twitter.js" %}"></script>{% endaddtoblock %}
+
+<div class="plugin-twitter" 
+	data-username="{{ instance.username }}" 
+	data-count="{{ instance.count }}" 
+	data-query="{{ instance.query }}" 
+	data-trans-default="{% trans "we said," %}"
+	data-trans-ed="{% trans "we" %}", 
+	data-trans-ing="{% trans "we were" %}", 
+	data-trans-reply="{% trans "we replied to" %}", 
+	data-trans-url="{% trans "we were checking out" %}", 
+	data-trans-loading="{% trans "loading tweets…" %}">
+    <h2>{{ instance.title }} <a href="https://www.twitter.com/{{ instance.username }}" class="twitter-icon">{% trans "Twitter" %}</a></h2>
+    <div class="twitter-container"></div>
+    {% if instance.twitter_user %}<p><a href="https://www.twitter.com/{{ instance.twitter_user }}" class="twitter-link">{{ instance.link_hint }}</a></p>{% endif %}
+</div>

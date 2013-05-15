@@ -1,0 +1,13 @@
+name: Twitter
+package-name: aldryn-twitter
+url: https://github.com/aldryn/aldryn-twitter
+author:
+  name: Divio AG
+  url: https://www.divio.ch
+installed-apps:
+  - aldryn_twitter
+version: 0.0.1
+description: Allows embeding tweets on django CMS site
+license:
+  name: BSD
+  text: !literal-include LICENSE.txt
