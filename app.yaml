@@ -6,7 +6,7 @@ author:
   url: https://www.divio.ch
 installed-apps:
   - aldryn_twitter
-version: 0.0.3
+version: 0.0.6
 description: Allows embeding tweets on django CMS site
 license:
   name: BSD
