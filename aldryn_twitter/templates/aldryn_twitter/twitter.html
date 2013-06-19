@@ -1,9 +1,3 @@
 {% load i18n sekizai_tags staticfiles %}
-{% addtoblock "js" %}<script type="text/javascript" src="{% static "aldryn_twitter/js/jquery.tweet.js" %}"></script>{% endaddtoblock %}
-{% addtoblock "js" %}<script type="text/javascript" src="{% static "aldryn_twitter/js/twitter.js" %}"></script>{% endaddtoblock %}
-
-<div class="plugin-twitter" data-username="{{ instance.username }}" data-count="{{ instance.count }}" data-query="{{ instance.query }}">
-	<h2>{{ instance.title }} <a href="https://www.twitter.com/{{ instance.username }}" class="twitter-icon">{% trans "Twitter" %}</a></h2>
-	<div class="twitter-container"></div>
-	{% if instance.twitter_user %}<p><a href="https://www.twitter.com/{{ instance.twitter_user }}" class="twitter-link">{{ instance.link_hint }}</a></p>{% endif %}
-</div>
+<a class="twitter-timeline" href="{% if instance.href %}{{ isntance.href }}{% else %}#{% endif %}" data-widget-id="{{ instance.widget_id}}">{{ instance.link_title }}</a>
+{% addtoblock "js" %}<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>{% endaddtoblock %}
