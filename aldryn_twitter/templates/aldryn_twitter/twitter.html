@@ -1,3 +1,18 @@
 {% load i18n sekizai_tags staticfiles %}
-<a class="twitter-timeline" href="{% if instance.href %}{{ isntance.href }}{% else %}#{% endif %}" data-widget-id="{{ instance.widget_id}}">{{ instance.link_title }}</a>
+<a class="twitter-timeline" 
+	href="{% if instance.href %}{{ isntance.href }}{% else %}#{% endif %}" 
+	data-widget-id="{{ instance.widget_id}}"
+	data-theme="{{ instance.theme }}"
+	{% if instance.width %}width="{{ instance.width }}"{% endif %}
+	{% if instance.height %}height="{{ instance.height }}"{% endif %}
+	data-chrome="{% if not instance.header %}noheader {% endif %}{% if not instance.footer %}nofooter {% endif %}{% if not instance.borders %}noborders {% endif %}{% if not instance.scrollbar %}noscrollbar {% endif %}{% if instance.transparent %}transparent{% endif %}"
+	{% if instance.border_color %}data-border-color="#{{ instance.border_color }}"{% endif %}
+	{% if instance.link_color %}data-link-color="#{{ instance.link_color }}"{% endif %}
+	{% if instance.language_code %}data-language="{{ instance.language_code }}"{% endif %}
+	{% if instance.tweet_limit %}data-tweet-limit="{{ instance.tweet_limit }}"{% endif %}
+	{% if instance.related %}data-related="{{ instance.related }}"{% endif %}
+	data-aria-polite="{{ instance.aria_politeness }}"
+	>
+	{{ instance.link_title }}
+</a>
 {% addtoblock "js" %}<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>{% endaddtoblock %}
