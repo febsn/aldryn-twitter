@@ -1,0 +1,17 @@
+{
+  "name": "Aldryn Twitter",
+  "description": "Allows embeding tweets on django CMS site",
+  "url": "https://github.com/aldryn/aldryn-twitter",
+  "package-name": "aldryn-twitter",
+  "installed-apps": [
+    "aldryn_twitter"
+  ],
+  "author": {
+    "name": "Divio AG",
+    "url": "https://www.divio.ch"
+  },
+  "license": {
+    "name": "BSD",
+    "text": "!literal-include LICENSE.txt"
+  }
+}
